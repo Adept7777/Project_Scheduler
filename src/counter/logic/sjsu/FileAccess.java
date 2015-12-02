@@ -14,8 +14,7 @@ public class FileAccess {
 	private final File file;
 
 	/**
-	 * Constructor sets in and out to null for now, since the streams will only be opened in methods when needed, but takes 
-	 * in the file that will be written and read from.
+	 * Constructor that takes in the file that will be written and read from.
 	 * @param file the file to read and write
 	 */
 	public FileAccess(File file) {
