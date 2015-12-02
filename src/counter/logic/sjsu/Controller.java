@@ -31,9 +31,8 @@ public class Controller {
 
 	/**
 	 * Loads all the Events from the file into the ArrayList.
-	 * @throws IOException IOException from load method in FileAccess
 	 */
-	public void retrieveData() throws IOException {
+	public void retrieveData() {
 		for (Event event : this.fileAccess.load()) {
 			this.events.add(event);
 		}
@@ -41,10 +40,16 @@ public class Controller {
 
 	/**
 	 * Saves all the events currently in the ArrayList to the file.
-	 * @throws IOException 
 	 */
-	public void storeData() throws IOException {
+	public void storeData() {
 		this.fileAccess.save(this.events);
+	}
+
+	/**
+	 * Clears all the text from the file the Controller is working with.
+	 */
+	public void clearData() {
+		this.fileAccess.clear();
 	}
 
 	/**

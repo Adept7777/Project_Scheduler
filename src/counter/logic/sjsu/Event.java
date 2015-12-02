@@ -91,4 +91,20 @@ public class Event {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	/**
+	 * Basic equals method that compares the parameters of events to check equality.
+	 * @param o the event to compare with
+	 * @return true if they have the same parameters, false if not
+	 */
+	@Override
+	public boolean equals(Object o) {
+		if (!(o instanceof Event)) { return false; }
+		else {
+			Event e = (Event) o;
+			return this.name.equals(e.name) && this.color.equals(e.color) && this.startHour == e.startHour &&
+				this.endHour == e.endHour && this.startMinute == e.startMinute && this.endMinute == e.endMinute &&
+				this.day.equals(e.day) && this.description.equals(e.description);
+		}
+	}
 }

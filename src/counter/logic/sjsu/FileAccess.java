@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -31,9 +32,8 @@ public class FileAccess {
 	/**
 	 * Saves all the events in the passed ArrayList to a text file, with every parameter on a new line.
 	 * @param events the ArrayList of events to save
-	 * @throws IOException can have exceptions when dealing with IO
 	 */
-	public void save(ArrayList<Event> events) throws IOException {
+	public void save(ArrayList<Event> events) {
 		try (FileWriter out = new FileWriter(this.file, true)) {
 			for (Event event : events) {
 				out.write(event.getName() + "\n");
@@ -55,9 +55,8 @@ public class FileAccess {
 	 * Loads any present events from the file, assumes that only event data has been written to the file, in the format that
 	 * the save method uses.
 	 * @return an ArrayList containing all the loaded events
-	 * @throws IOException can have exceptions when dealing with IO
 	 */
-	public ArrayList<Event> load() throws IOException {
+	public ArrayList<Event> load() {
 		ArrayList<Event> events = new ArrayList<>();
 		
 		try (Scanner in = new Scanner(this.file)) {
@@ -86,5 +85,17 @@ public class FileAccess {
 		}
 
 		return events;
+	}
+
+	/**
+	 * Simple method which just opens a PrintWriter at the file then closes it immediately, which truncates the file to zero
+	 * size, and thus deletes the contents of the file.
+	 */
+	public void clear() {
+		try (PrintWriter out = new PrintWriter(this.file)) {
+		}
+		catch (IOException e) {
+			System.out.println("Unable to delete contents of file: " + this.file.getPath());
+		}
 	}
 }
