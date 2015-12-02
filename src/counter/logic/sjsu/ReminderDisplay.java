@@ -1,43 +1,22 @@
-import java.awt.Button;
-import java.awt.CardLayout;
-import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.Rectangle;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.GridLayout;
-import java.awt.Dimension;
-import java.awt.BorderLayout;
-import java.awt.Graphics2D;
-import java.awt.Graphics;
+package counter.logic.sjsu;
 
-import javax.swing.BorderFactory;
 import javax.swing.SpinnerNumberModel;
-import javax.swing.SpringLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JTextField;
-import javax.swing.JTextPane;
-import javax.swing.JComponent;
-import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JSpinner;
-import java.awt.BorderLayout;
-import javax.swing.SpinnerModel;
 
 
-public class MockupUI2 extends JFrame {
-	
+public class ReminderDisplay extends JFrame {
 	private JFrame frame;
 		
-	private void frameSetUp()
-	{
+	private void frameSetUp() {
 		frame = new JFrame("JSpinner");
 		frame.setLayout(null);
-	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    frame.setResizable(false);
-	    //frame.pack();
-	    
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
+		//frame.pack();
+
 		JLabel label1 = new JLabel("Event 1");
 		JLabel label2 = new JLabel("Time: ");
 		JLabel label3 = new JLabel(":");
@@ -46,7 +25,6 @@ public class MockupUI2 extends JFrame {
 		SpinnerNumberModel mmodel = new SpinnerNumberModel(00,00,59, 1);
 		JSpinner mins = new JSpinner(mmodel);
 		String.format("%02d", mins.getValue());
-
 		
 		frame.add(label1);
 		label1.setBounds(170,10,50,30);
@@ -78,14 +56,12 @@ public class MockupUI2 extends JFrame {
 		frame.add(label5);
 		label5.setBounds(20,200,400,30);
 		
-		
-	    frame.setSize(400, 300);
-	    frame.setVisible(true);
-
+		frame.setSize(400, 300);
+		frame.setVisible(true);
 	}
 	
-	  public static void main(String[] args) {
-		   MockupUI2 aTester = new MockupUI2();
-		   aTester.frameSetUp();
-		  }
+	public static void main(String[] args) {
+		ReminderDisplay aTester = new ReminderDisplay();
+		aTester.frameSetUp();
+	}
 }

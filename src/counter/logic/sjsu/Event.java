@@ -1,13 +1,17 @@
+package counter.logic.sjsu;
+
 import java.awt.Color;
 import java.util.Date;
 
+/**
+ * Class to model data for events, keeping track of them for the scheduler.
+ */
 public class Event {
-
 	public String name;
 	public Date date;
 	public Color color;
 	
-	public Event(String name,Date date,Color color)
+	public Event(String name, Date date, Color color)
 	{
 		this.name = name;
 		this.date = date;
