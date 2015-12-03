@@ -121,6 +121,7 @@ public class WeekDisplay extends JFrame {
 				g.fillRect(101+104*(control.events.get(i).getDay()),81+((control.events.get(i).getStartHour()-lowestS)*76/interval)+(((control.events.get(i).getStartMinute()*76)/60)/interval),103,((control.events.get(i).getEndHour()-control.events.get(i).getStartHour())*76/interval)+(((control.events.get(i).getEndMinute()*76)/60)/interval)-(((control.events.get(i).getStartMinute()*76)/60)/interval));			
 				g.setColor(Color.WHITE);
 				g.drawString(control.events.get(i).getName(),101+8+104*(control.events.get(i).getDay()), 101+((control.events.get(i).getStartHour()-lowestS)*76/interval)+(((control.events.get(i).getStartMinute()*76)/60)/interval));
+				g.drawString(control.events.get(i).getDescription(),101+8+104*(control.events.get(i).getDay()), 120+((control.events.get(i).getStartHour()-lowestS)*76/interval)+(((control.events.get(i).getStartMinute()*76)/60)/interval));
 			}
 			else
 			{
