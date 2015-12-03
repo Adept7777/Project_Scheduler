@@ -42,6 +42,7 @@ public class Controller {
 	 * Saves all the events currently in the ArrayList to the file.
 	 */
 	public void storeData() {
+		this.clearData();
 		this.fileAccess.save(this.events);
 	}
 
