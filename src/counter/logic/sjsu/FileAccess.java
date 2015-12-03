@@ -74,7 +74,7 @@ public class FileAccess {
 				int endHour = Integer.parseInt(in.nextLine());
 				int startMinute = Integer.parseInt(in.nextLine());
 				int endMinute = Integer.parseInt(in.nextLine());
-				String day = in.nextLine();
+				int day = Integer.parseInt(in.nextLine());
 				String description = in.nextLine();
 
 				events.add(new Event(name, color, startHour, endHour, startMinute, endMinute, day, description));
