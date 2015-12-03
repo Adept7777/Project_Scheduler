@@ -60,4 +60,12 @@ public class Controller {
 	public void addEvent(Event event) {
 		this.events.add(event);
 	}
+
+	/**
+	 * Method to make removing events easier, rather than accessing the ArrayList directly.
+	 * @param index the index of the ArrayList to be removed
+	 */
+	public void removeEvent(int index) {
+		this.events.remove(index);
+	}
 }
