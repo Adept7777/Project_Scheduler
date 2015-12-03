@@ -12,11 +12,11 @@ public class Event {
 	private int endHour; // Hour of end of event
 	private int startMinute; // Minutes of start of event
 	private int endMinute; // Minutes of end of event
-	private String day; // Day of the week the event is on
+	private int day; // Day of the week the event is on
 	private String description; // Description of the event
 	
 	public Event(String name, Color color, int startHour, int endHour, 
-			int startMinute, int endMinute, String day, String description) {
+			int startMinute, int endMinute, int day, String description) {
 
 		this.name = name;
 		this.color = color;
@@ -76,11 +76,11 @@ public class Event {
 		this.endMinute = endMinute;
 	}
 
-	public String getDay() {
+	public int getDay() {
 		return this.day;
 	}
 
-	public void setDay(String day) {
+	public void setDay(int day) {
 		this.day = day;
 	}
 
@@ -104,7 +104,7 @@ public class Event {
 			Event e = (Event) o;
 			return this.name.equals(e.name) && this.color.equals(e.color) && this.startHour == e.startHour &&
 				this.endHour == e.endHour && this.startMinute == e.startMinute && this.endMinute == e.endMinute &&
-				this.day.equals(e.day) && this.description.equals(e.description);
+				this.day == e.day && this.description.equals(e.description);
 		}
 	}
 }
