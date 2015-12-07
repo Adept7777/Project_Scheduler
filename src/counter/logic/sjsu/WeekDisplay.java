@@ -121,26 +121,55 @@ public class WeekDisplay extends JFrame {
 				g.fillRect(101+104*(control.events.get(i).getDay()),81+((control.events.get(i).getStartHour()-lowestS)*76/interval)+(((control.events.get(i).getStartMinute()*76)/60)/interval),103,((control.events.get(i).getEndHour()-control.events.get(i).getStartHour())*76/interval)+(((control.events.get(i).getEndMinute()*76)/60)/interval)-(((control.events.get(i).getStartMinute()*76)/60)/interval));			
 				g.setColor(Color.WHITE);
 				g.drawString(control.events.get(i).getName(),101+8+104*(control.events.get(i).getDay()), 101+((control.events.get(i).getStartHour()-lowestS)*76/interval)+(((control.events.get(i).getStartMinute()*76)/60)/interval));
+				//g.drawString(control.events.get(i).getDescription(),101+8+104*(control.events.get(i).getDay()), 120+((control.events.get(i).getStartHour()-lowestS)*76/interval)+(((control.events.get(i).getStartMinute()*76)/60)/interval));
+				if(control.events.get(i).getDescription().length() < 14)
+				{
 				g.drawString(control.events.get(i).getDescription(),101+8+104*(control.events.get(i).getDay()), 120+((control.events.get(i).getStartHour()-lowestS)*76/interval)+(((control.events.get(i).getStartMinute()*76)/60)/interval));
+				}
+				if(control.events.get(i).getDescription().length() >= 14 && control.events.get(i).getDescription().length() < 27)
+				{
+				g.drawString(control.events.get(i).getDescription().substring(0,13),101+8+104*(control.events.get(i).getDay()), 120+((control.events.get(i).getStartHour()-lowestS)*76/interval)+(((control.events.get(i).getStartMinute()*76)/60)/interval));
+				g.drawString(control.events.get(i).getDescription().substring(13, control.events.get(i).getDescription().length()),101+8+104*(control.events.get(i).getDay()), 132+((control.events.get(i).getStartHour()-lowestS)*76/interval)+(((control.events.get(i).getStartMinute()*76)/60)/interval));
+				}
+				if(control.events.get(i).getDescription().length() >= 27 && control.events.get(i).getDescription().length() < 40)
+				{
+				g.drawString(control.events.get(i).getDescription().substring(0,13),101+8+104*(control.events.get(i).getDay()), 120+((control.events.get(i).getStartHour()-lowestS)*76/interval)+(((control.events.get(i).getStartMinute()*76)/60)/interval));
+				g.drawString(control.events.get(i).getDescription().substring(13, 26),101+8+104*(control.events.get(i).getDay()), 132+((control.events.get(i).getStartHour()-lowestS)*76/interval)+(((control.events.get(i).getStartMinute()*76)/60)/interval));
+				g.drawString(control.events.get(i).getDescription().substring(26, control.events.get(i).getDescription().length()),101+8+104*(control.events.get(i).getDay()), 144+((control.events.get(i).getStartHour()-lowestS)*76/interval)+(((control.events.get(i).getStartMinute()*76)/60)/interval));
+				}
 			}
 			else
 			{
 				g.fillRect(101+104*(control.events.get(i).getDay()),81+((control.events.get(i).getStartHour()-lowestS)*76/interval)+(((control.events.get(i).getStartMinute()*76)/60)/interval),103,((control.events.get(i).getEndHour()-control.events.get(i).getStartHour())*76/interval)+(((control.events.get(i).getEndMinute()*76)/60)/interval)-(((control.events.get(i).getStartMinute()*76)/60)/interval));
 				g.setColor(Color.BLACK);
 				g.drawString(control.events.get(i).getName(),101+8+104*(control.events.get(i).getDay()), 101+((control.events.get(i).getStartHour()-lowestS)*76/interval)+(((control.events.get(i).getStartMinute()*76)/60)/interval));
+				if(control.events.get(i).getDescription().length() < 14)
+				{
 				g.drawString(control.events.get(i).getDescription(),101+8+104*(control.events.get(i).getDay()), 120+((control.events.get(i).getStartHour()-lowestS)*76/interval)+(((control.events.get(i).getStartMinute()*76)/60)/interval));
+				}
+				if(control.events.get(i).getDescription().length() >= 14 && control.events.get(i).getDescription().length() < 27)
+				{
+				g.drawString(control.events.get(i).getDescription().substring(0,13),101+8+104*(control.events.get(i).getDay()), 120+((control.events.get(i).getStartHour()-lowestS)*76/interval)+(((control.events.get(i).getStartMinute()*76)/60)/interval));
+				g.drawString(control.events.get(i).getDescription().substring(13, control.events.get(i).getDescription().length()),101+8+104*(control.events.get(i).getDay()), 132+((control.events.get(i).getStartHour()-lowestS)*76/interval)+(((control.events.get(i).getStartMinute()*76)/60)/interval));
+				}
+				if(control.events.get(i).getDescription().length() >= 27 && control.events.get(i).getDescription().length() < 40)
+				{
+				g.drawString(control.events.get(i).getDescription().substring(0,13),101+8+104*(control.events.get(i).getDay()), 120+((control.events.get(i).getStartHour()-lowestS)*76/interval)+(((control.events.get(i).getStartMinute()*76)/60)/interval));
+				g.drawString(control.events.get(i).getDescription().substring(13, 26),101+8+104*(control.events.get(i).getDay()), 132+((control.events.get(i).getStartHour()-lowestS)*76/interval)+(((control.events.get(i).getStartMinute()*76)/60)/interval));
+				g.drawString(control.events.get(i).getDescription().substring(26, control.events.get(i).getDescription().length()),101+8+104*(control.events.get(i).getDay()), 144+((control.events.get(i).getStartHour()-lowestS)*76/interval)+(((control.events.get(i).getStartMinute()*76)/60)/interval));
+				}
 			}
 			g.setColor(Color.BLACK);
 		}
 		
 		g.drawString("Time", 45, 65);
-		g.drawString("Sat", 120+20, 65);
+		g.drawString("Sun", 120+20, 65);
 		g.drawString("Mon", 224+20, 65);
 		g.drawString("Tue", 328+20, 65);
 		g.drawString("Wed", 432+20, 65);
 		g.drawString("Thur", 536+20, 65);
 		g.drawString("Fri", 536+104+20, 65);
-		g.drawString("Sun", 536+104*2+20, 65);
+		g.drawString("Sat", 536+104*2+20, 65);
 		g.drawString(lowestS+":00", 50, 120);
 		g.drawString(lowestS+interval+":00", 50, 120+76*1);
 		g.drawString(lowestS+2*interval+":00", 50, 120+76*2);
